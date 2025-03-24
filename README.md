@@ -61,7 +61,7 @@ streamlit run app.py
 Distributed under MIT License. See `LICENSE` for more information.
 
 ## 🙏 Acknowledgments
-- Groq for their revolutionary API
+- Groq for their API
 - Streamlit for amazing UI framework
 - Llama-3 vision model contributors
-```
+
