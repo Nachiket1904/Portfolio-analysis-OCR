@@ -49,18 +49,6 @@ streamlit run app.py
 3. View formatted results in main panel
 4. Use Clear button to reset
 
-```
-├───assets/           # Images & resources
-├───portfolio-analysis/
-│   ├───data_loader.py
-│   ├───risk_calculator.py
-│   └───visualization.py
-├───ocr/
-│   ├───image_processor.py
-│   └───groq_client.py
-├── app.py            # Main Streamlit app
-└── requirements.txt
-```
 
 ## 🤝 Contributing
 1. Fork the repository
