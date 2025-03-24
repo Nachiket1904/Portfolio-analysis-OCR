@@ -15,23 +15,6 @@ A dual-purpose toolkit combining financial portfolio analysis and advanced OCR c
 - 📤 Multi-format support (PNG, JPG, JPEG)
 
 
-## 🛠️ Architecture
-
-```
-graph TD
-    A[User Interface] -->|Upload Image| B[Streamlit App]
-    B --> C{Image Processing}
-    C -->|Extract Bytes| D[Base64 Encoding]
-    D --> E[Groq API]
-    E -->|Vision Model| F[LLama-3.2-11b]
-    F -->|Structured Text| G[Markdown Rendering]
-    G --> H[User Output]
-    
-    subgraph Portfolio Analysis
-    I[Stock Data] --> J[Analysis Engine]
-    J --> K[Visualization]
-    end
-```
 
 ## 🚀 Quick Start
 
