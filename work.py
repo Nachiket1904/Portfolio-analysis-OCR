@@ -5,7 +5,7 @@ from PIL import Image
 import io
 
 # Groq API Configuration
-GROQ_API_KEY = "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"  # Replace with your actual API key
+GROQ_API_KEY = "GROQ_API_KEY"  # Replace with your actual API key
 
 def encode_image(image_bytes):
     return base64.b64encode(image_bytes).decode("utf-8")
