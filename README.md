@@ -1,109 +1,96 @@
-# Portfolio Performance Tracker 📈
+# 🔍 FinVision Toolkit: Portfolio Analysis & OCR Suite
 
-A web-based application built with Streamlit that helps users track and analyze their investment portfolio performance.
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)](https://streamlit.io/)
+[![Groq](https://img.shields.io/badge/Groq-00FF00?style=for-the-badge&logo=groq&logoColor=black)](https://groq.com/)
+![GitHub branch](https://img.shields.io/github/checks-status/Nachiket1904/portfolio-analysis-and-ocr/OCR)
 
-## Features
+A dual-purpose toolkit combining financial portfolio analysis and advanced OCR capabilities using Groq's Vision API.
 
-- 📊 Real-time portfolio tracking
-- 📈 Performance analysis with multiple metrics (XIRR, Total Return, Annualized Return)
-- 🔄 Benchmark comparison
-- 📅 Transaction history management
-- 📊 Portfolio allocation visualization
-- 📥 CSV import support
+## 🌟 Features
 
-## Installation
+### OCR Module
+- 🖼️ Image-to-text conversion with layout preservation
+- ✨ Structured Markdown output
+- ⚡ Real-time processing with Groq's LLama-3.2 Vision
+- 📤 Multi-format support (PNG, JPG, JPEG)
 
-1. Clone the repository:
 
-```bash
-git clone https://github.com/yourusername/portfolio-performance-tracker.git
-cd portfolio-performance-tracker
+## 🛠️ Architecture
+
+```
+graph TD
+    A[User Interface] -->|Upload Image| B[Streamlit App]
+    B --> C{Image Processing}
+    C -->|Extract Bytes| D[Base64 Encoding]
+    D --> E[Groq API]
+    E -->|Vision Model| F[LLama-3.2-11b]
+    F -->|Structured Text| G[Markdown Rendering]
+    G --> H[User Output]
+    
+    subgraph Portfolio Analysis
+    I[Stock Data] --> J[Analysis Engine]
+    J --> K[Visualization]
+    end
 ```
 
-2. Create a virtual environment (recommended):
+## 🚀 Quick Start
 
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+### Prerequisites
+- Python 3.9+
+- Groq API Key
+- Streamlit
+
+### Installation
 ```
-
-3. Install required packages:
-
-```bash
+git clone https://github.com/yourusername/reponame.git
+cd reponame
 pip install -r requirements.txt
 ```
 
-## Usage
+### OCR Module Setup
+1. Get your [Groq API Key](https://console.groq.com/)
+2. Replace placeholder in code:
+```
+GROQ_API_KEY = "your_api_key_here"  # In app.py
+```
 
-1. Start the application:
-
-```bash
+### Running the App
+```
 streamlit run app.py
 ```
 
-2. The application will open in your default web browser with three main sections:
+## 📖 Usage Guide
 
-### Input Transactions
-- **Manual Entry**: Add individual transactions with:
-  - Stock Symbol (e.g., MSFT)
-  - Transaction Date
-  - Transaction Type (BUY/SELL)
-  - Quantity
-  - Price per Share
+1. Upload image through sidebar
+2. Click "Extract Text"
+3. View formatted results in main panel
+4. Use Clear button to reset
 
-- **CSV Upload**: Bulk import transactions using a CSV file with the following format:
-
-```csv
-Symbol,Date,Type,Quantity,Price
-AAPL,2024-03-15,BUY,10,172.62
-MSFT,2024-03-14,SELL,5,425.22
+```
+├───assets/           # Images & resources
+├───portfolio-analysis/
+│   ├───data_loader.py
+│   ├───risk_calculator.py
+│   └───visualization.py
+├───ocr/
+│   ├───image_processor.py
+│   └───groq_client.py
+├── app.py            # Main Streamlit app
+└── requirements.txt
 ```
 
-### View Portfolio
-- Current holdings overview
-- Portfolio allocation pie chart
-- Total portfolio value
-- Transaction history with delete options
+## 🤝 Contributing
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
 
-### Analysis
-- Portfolio value over time chart
-- Performance metrics:
-  - XIRR (Extended Internal Rate of Return)
-  - Total Return
-  - Annualized Return
-  - Weighted Average Holding Time
-- Stock-wise performance analysis
-- Benchmark comparison with customizable benchmark symbol
+## 📄 License
+Distributed under MIT License. See `LICENSE` for more information.
 
-## Data Storage
-
-The application uses Streamlit's session state to store transaction data during the session. Data persists only while the application is running.
-
-## Requirements
-
-- Python 3.7+
-- Streamlit
-- Pandas
-- NumPy
-- Plotly
-- yfinance
-
-## Notes
-
-- Stock data is fetched using the Yahoo Finance API through the `yfinance` package
-- All calculations are performed in real-time using current market prices
-- The application supports multiple currencies but assumes all transactions are in the same currency
-
-## Limitations
-
-- Data is not persisted between sessions
-- Real-time price updates depend on the Yahoo Finance API availability
-- Performance calculations may take longer with a large number of transactions
-
-## Contributing
-
-Feel free to submit issues, fork the repository, and create pull requests for any improvements.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+## 🙏 Acknowledgments
+- Groq for their revolutionary API
+- Streamlit for amazing UI framework
+- Llama-3 vision model contributors
+```
